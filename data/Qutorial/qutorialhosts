@@ -1,0 +1,26 @@
+# Potential Ads
+127.0.0.1	adspirit.de
+127.0.0.1	cdn.adspirit.de
+127.0.0.1	echoban.ru
+127.0.0.1	ads.echo.msk.ru
+127.0.0.1	directadvert.net
+127.0.0.1	directadvert.ru
+127.0.0.1	mediatoday.ru
+
+# Potential Trackers
+127.0.0.1	mediametrics.ru
+127.0.0.1	relap.io
+127.0.0.1	medianetworks.ru
+127.0.0.1	smi2.ru
+127.0.0.1	lentainform.com
+127.0.0.1	rtarget.ru
+127.0.0.1	ttarget.ru
+127.0.0.1	redtram.com
+127.0.0.1	trackitfast.net
+127.0.0.1	index.ru
+127.0.0.1	mirtesen.ru
+
+# Others
+# Redirected from previously blocked
+127.0.0.1	likes.guru
+
