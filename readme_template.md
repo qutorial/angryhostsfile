@@ -3,6 +3,9 @@
 This tool can produce a hosts file or a dnsmasq configuration, which will 
 block many of "unwanted" hosts: trackers, ads, etc.
 
+The *philosophy* is to block everything, even when suspicions are little. It is a
+paranoia tool. It is very angry in this sense.
+
 Use whitelist to make it less angry :)
 
 A tool to configure dnsmasq or `hosts` file using a merge from a 
@@ -12,7 +15,7 @@ This is a modified version of the original Steven Black's work.
 The differences are:
 * Hosts Tool is just a tool, we do not provide a hosts file, but the tool builds it
 * This tool configures dnsmasq in addition to hosts file, it provides stronger blocking
-* It contains more hosts sources, blocking around 417K hosts
+* It contains more hosts sources, blocking more than 430K hosts
 * It works with unicode domain names
 * We give you the option to block or not to block subdomains of the whitelisted domains
 * You have to put the whitelisted domains in the `whitelist` file
