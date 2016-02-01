@@ -32,7 +32,7 @@
 127.0.0.1	lib.rl0.ru
 127.0.0.1	rl0.ru
 127.0.0.1	awaps.yandex.ru
-
+127.0.0.1	advertur.ru
 
 
 
@@ -40,4 +40,16 @@
 # Others
 # Redirected from previously blocked
 127.0.0.1	likes.guru
+
+# Potentially problematic / maybe fishy / maybe untrusted
+
+127.0.0.1	3nakomstva.ru
+127.0.0.1	loveplanet.ru
+127.0.0.1	duh-vremeni.ru
+127.0.0.1	weborama.io
+127.0.0.1	rootlink.org.ru
+127.0.0.1	rotaban.ru
+
+
+
 
