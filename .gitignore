@@ -1,4 +1,6 @@
 hosts
+HOSTS.txt
+HOSTS
 data/someonewhocares.org/hosts
 data/mvps.org/hosts
 data/malwaredomainlist.com/hosts

@@ -29,6 +29,7 @@
 127.0.0.1	cntcerber.rambler.ru
 127.0.0.1	montblanc.rambler.ru
 127.0.0.1	mc.yandex.ru
+127.0.0.1	yastatic.net
 127.0.0.1	lib.rl0.ru
 127.0.0.1	rl0.ru
 127.0.0.1	awaps.yandex.ru
@@ -59,3 +60,7 @@
 127.0.0.1	www.softportal.com
 127.0.0.1	softportal.com
 
+# Spam and hacked web-sites
+127.0.0.1	marketinglimit.com
+127.0.0.1	sdgounffv.com
+127.0.0.1	padsdel.com
