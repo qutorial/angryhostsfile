@@ -70,6 +70,7 @@ settings-sandbox.data.microsoft.com	127.0.0.1
 settings-win.data.microsoft.com	127.0.0.1
 sls.update.microsoft.com.akadns.net	127.0.0.1
 sqm.df.telemetry.microsoft.com	127.0.0.1
+telemetry.microsoft.com	127.0.0.1
 sqm.telemetry.microsoft.com	127.0.0.1
 sqm.telemetry.microsoft.com.nsatc.net	127.0.0.1
 static.2mdn.net	127.0.0.1
