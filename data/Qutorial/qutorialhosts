@@ -11,6 +11,9 @@
 127.0.0.1	cdn2.spiegel.de
 127.0.0.1	marketgid.com
 127.0.0.1	imgg.marketgid.com
+127.0.0.1	s.mixadvert.com
+127.0.0.1	mixadvert.com
+127.0.0.1	avatars-fast.yandex.net
 
 
 # Potential Trackers
@@ -40,8 +43,9 @@
 127.0.0.1	rl0.ru
 127.0.0.1	awaps.yandex.ru
 127.0.0.1	advertur.ru
-
-
+127.0.0.1	code.rtbsystem.com
+127.0.0.1	rtbsystem.com
+127.0.0.1	recreativ.ru
 
 
 # Others
