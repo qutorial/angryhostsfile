@@ -46,9 +46,10 @@
 127.0.0.1	code.rtbsystem.com
 127.0.0.1	rtbsystem.com
 127.0.0.1	recreativ.ru
+127.0.0.1	onthe.io
+127.0.0.1	cdn.onthe.io
+127.0.0.1	tt.onthe.io
 
-
-# Others
 # Redirected from previously blocked
 127.0.0.1	likes.guru
 
@@ -59,8 +60,6 @@
 127.0.0.1	weborama.io
 127.0.0.1	rootlink.org.ru
 127.0.0.1	rotaban.ru
-
-
 
 # Potential pirateware
 127.0.0.1	mydiv.net
@@ -74,3 +73,8 @@
 127.0.0.1	marketinglimit.com
 127.0.0.1	sdgounffv.com
 127.0.0.1	padsdel.com
+
+# Others
+127.0.0.1	lenta.ru
+127.0.0.1	icdn.lenta.ru
+
