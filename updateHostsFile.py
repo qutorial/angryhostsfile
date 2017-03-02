@@ -186,6 +186,7 @@ def listWhitelisted():
 		print(d)
 
 def main():
+	print("Make sure to have dnsmasq off and clean hosts to load the updates!")
 	promptForDnsmasq()
 	promptForUpdate()
 	excludeFromFile()
