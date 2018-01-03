@@ -49,6 +49,8 @@
 127.0.0.1	onthe.io
 127.0.0.1	cdn.onthe.io
 127.0.0.1	tt.onthe.io
+127.0.0.1	static.audienceinsights.net
+127.0.0.1	api.behavioralengine.com
 
 # Redirected from previously blocked
 127.0.0.1	likes.guru
