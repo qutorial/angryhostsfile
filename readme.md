@@ -1,4 +1,4 @@
-#Angry Hosts File - blocking unwanted hosts
+# Angry Hosts File - blocking unwanted hosts
 
 This tool can produce a hosts file or a dnsmasq configuration, which will 
 block many of "unwanted" hosts: trackers, ads, etc.
