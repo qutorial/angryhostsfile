@@ -52,7 +52,11 @@ except ImportError:
 # This function handles both Python 2 and Python 3
 def getFileByUrl(url):
 	f = urlopen(url)
-	return f.read().decode("UTF-8")		
+	return f.read().decode("UTF-8")
+
+def getFileByUrlBin(url):
+	f = urlopen(url)
+	return f.read()
 
 # In Python 3   "print" is a function, braces are added everywhere
 
@@ -71,11 +75,39 @@ def myInput(msg=""):
 
 
 # Cross-python writing function
+def writeDataBin(f, data):
+	f.write(data)
+
 def writeData(f, data):
 	if Python3:
 		f.write(bytes(data, 'UTF-8'))
 	else:
 		f.write(str(data).encode('UTF-8'))
+
+def readDataAscii(f):
+	return open(f, mode="r", encoding="ascii").read()
+
+def readDataIso(f):
+	return open(f, mode="r", encoding="iso8859-15").read()
+
+def readDataAuto(f):
+	return open(f, mode="r").read()
+
+
+def readData(f):
+	try:
+		return open(f, mode="r", encoding="utf-8").read()
+	except:
+		try:
+			return readDataAscii(f)
+		except:
+			try:
+				return readDataIso(f)
+			except:
+				return readDataAuto(f)
+
+
+
 
 # This function doesn't list hidden files
 def listdir_nohidden(path):
@@ -270,6 +302,22 @@ def matchesExclusions(domain):
 				return True
 		return False
 
+def extractIfZip(source):
+	try:
+		url = getUpdateURLFromFile(source)
+		if url.endswith('zip'):
+			resPath = os.path.join(DATA_PATH, source, DATA_FILENAMES)
+			os.rename(resPath, resPath+'.zip')
+			resPath=resPath+'.zip'
+			import zipfile
+			zip = zipfile.ZipFile(resPath, 'r')
+			zip.extract("hosts.txt", os.path.join(DATA_PATH, source))
+			zip.close()
+			os.rename(os.path.join(DATA_PATH, source, "hosts.txt"), os.path.join(DATA_PATH, source, DATA_FILENAMES))
+			os.remove(resPath)
+	except:
+		print("Failed to unzip in " + source, sys.exc_info()[0])
+
 
 # Update Logic
 def updateSource(source):
@@ -280,14 +328,24 @@ def updateSource(source):
 	# Cross-python call
 	resPath = os.path.join(DATA_PATH, source, DATA_FILENAMES)
 	try:
-		updatedFile = getFileByUrl(updateURL);
-		updatedFile = updatedFile.replace('\r', '') #get rid of carriage-return symbols
-		# This is cross-python code
+		updatedFile = getFileByUrlBin(updateURL);
 		dataFile = open(resPath, 'wb')
-		writeData(dataFile, updatedFile)
+		writeDataBin(dataFile, updatedFile)
 		dataFile.close()
+
+		extractIfZip(source)
+
+		try:
+			updatedFile = readData(resPath)
+			updatedFile = updatedFile.replace('\r', '') #get rid of carriage-return symbols
+			dataFile = open(resPath+".tmp", 'wb')
+			writeData(dataFile, updatedFile)
+			dataFile.close()
+			os.rename(resPath+".tmp", resPath)
+		except:
+			print("Failed to replace carriage returns in the downloaded file.", sys.exc_info()[0])
 	except:
-		print ("Problem getting file: ", updateURL)
+		print ("Problem getting file: ", updateURL, sys.exc_info()[0] )
 	if not os.path.exists(resPath):
 		dataFile = open(resPath, 'wb')
 		dataFile.close()
@@ -492,7 +550,7 @@ def writeOpeningHeader(finalFile):
 	finalFile.seek(0) #write at the top
 	writeData(finalFile, '# This file is a merged collection of hosts from reputable sources,\n')
 	writeData(finalFile, '# with a dash of crowd sourcing via Github\n#\n')
-	writeData(finalFile, '# Project home page: https://github.com/StevenBlack/hosts\n#\n')
+	writeData(finalFile, '# Project home page: https://github.com/qutorial/angryhostsfile\n#\n')
 	writeData(finalFile, '# Current sources:\n')
 	for source in SOURCES:
 		writeData(finalFile, '#    ' + source + '\n')
