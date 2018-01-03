@@ -1,4 +1,4 @@
-# Angry Hosts File - blocking unwanted hosts
+#Angry Hosts File - blocking unwanted hosts
 
 This tool can produce a hosts file or a dnsmasq configuration, which will 
 block many of "unwanted" hosts: trackers, ads, etc.
@@ -20,7 +20,7 @@ The differences are:
 * We give you the option to block or not to block subdomains of the whitelisted domains
 * You have to put the whitelisted domains in the `whitelist` file
 
-**Currently this hosts file contains 646,547 unique entries.**
+**Currently this hosts file contains 647,411 unique entries.**
 
 ## Source of host data amalgamated here
 
