@@ -102,7 +102,7 @@ def isEmptyLine(s):
 
 domainCore=r'[\w\d-]{,63}(\.[\w\d-]{,63})*';
 validDomainRe=re.compile(r'^' + domainCore + r'$')
-def isValidDomain(d):	
+def isValidDomain(d):
 	return validDomainRe.match(d) is not None
 
 #Adblock Plus Format
@@ -162,11 +162,14 @@ def compileExclusionRegexes():
 		s = r'^(' + domainCore + r'\.)*' + ex.replace(".",r"\.") + r'$'
 		exclusionRegexs.append(re.compile(s))
 
+def dnsmasqInstalled():
+	return os.path.exists(DNSMASQ_CONF_MAIN_FILE)
+
 def promptForDnsmasq():
 	global GenerateDnsmasqConf
 	if( "yes" == query_yes_no("Generate a dnsmasq.conf?")):
 		GenerateDnsmasqConf = True;
-	if not os.path.exists(DNSMASQ_CONF_MAIN_FILE):
+	if not dnsmasqInstalled():
 		print("""You do not have dnsmasq installed, it is a more secure option for blocking domains by name.""");
 		print("""Read more at: http://molotnikov.de/dnsmasq""");
 
@@ -179,7 +182,7 @@ def promptBlockSubdomains():
 	if not BlockSubdomains:
 		r = "not "
 	print("Will %sblock subdomains of whitelisted domains" % r)
-	
+
 def listWhitelisted():
 	print("These domains are whitelisted:")
 	for d in EXCLUSIONS:
@@ -187,6 +190,7 @@ def listWhitelisted():
 
 def main():
 	print("Make sure to have dnsmasq off and clean hosts to load the updates!")
+	stopDnsmasq()
 	promptForDnsmasq()
 	promptForUpdate()
 	excludeFromFile()
@@ -512,13 +516,22 @@ def updateReadme(numberOfRules):
 		for line in open(README_TEMPLATE):
 			out.write(line.replace('@NUM_ENTRIES@', "{:,}".format( numberOfRules )))
 
+def stopDnsmasq():
+	if not dnsmasqInstalled():
+		print ('Dnsmasq not installed, skipping shutoff step for it.')
+		return
+	print ('Shutting off dnsmasq. You might need to enter your root password.')
+	print ('Warning! You are not protected before it is on again!')
+	if(subprocess.call(["/usr/bin/sudo", "service", "dnsmasq", "stop"])):
+		printFailure("Stopping dnsmasq failed.")
+
 def updateDnsmasqConf():
-	print ('Moving the file requires administrative privileges. You might need to enter your password.')
+	print ('Moving the file requires administrative privileges. You might need to enter your root password.')
 	if(subprocess.call(["/usr/bin/sudo", "cp", DNSMASQ_CONF_GENERATED, DNSMASQ_CONF_DST])):
 		printFailure("Moving the file failed.")
 	AddingConfLine="conf-file="+DNSMASQ_CONF_DST;
 	with open(DNSMASQ_CONF_MAIN_FILE, "r") as mainconf:
-		lines = mainconf.readlines()		
+		lines = mainconf.readlines()
 		found = False
 		for line in lines:
 				if AddingConfLine in line and not isComment(line):
@@ -530,9 +543,9 @@ def updateDnsmasqConf():
 			command = "echo \"\" >> "+ DNSMASQ_CONF_MAIN_FILE +" && echo " + AddingConfLine +" >> " + DNSMASQ_CONF_MAIN_FILE;
 			os.system(""" sudo bash -c "%s" """ % command);	
 			print("Success!");
-		
-	print("Restarting dnsmasq");
-	os.system("sudo service dnsmasq restart");
+	print("Starting dnsmasq...");
+	if(subprocess.call(["/usr/bin/sudo", "service", "dnsmasq", "start"])):
+		printFailure("Starting dnsmasq failed.")
 
 def moveHostsFileIntoPlace(finalFile):
 	if (os.name == 'posix'):
