@@ -23,6 +23,11 @@
 
 
 # Potential Trackers
+127.0.0.1	a-fds.youborafds01.com
+127.0.0.1	a-fds.youborafds02.com
+127.0.0.1	a-fds.youborafds03
+127.0.0.1	youborafds01.com
+127.0.0.1	youboraqds01.com
 127.0.0.1	googletagmanager.com
 127.0.0.1	www.googletagservices.com
 127.0.0.1	www.googletagmanager.com
