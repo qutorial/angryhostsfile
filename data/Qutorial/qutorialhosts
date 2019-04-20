@@ -14,12 +14,23 @@
 127.0.0.1	s.mixadvert.com
 127.0.0.1	mixadvert.com
 127.0.0.1	avatars-fast.yandex.net
+127.0.0.1	redblue.de
+127.0.0.1	www.redblue.de
+127.0.0.1	picscdn.redblue.de
+127.0.0.1	jscdn.redblue.de
+127.0.0.1	js.redblue.de
+127.0.0.1	css.redblue.de
 
 
 # Potential Trackers
+127.0.0.1	googletagmanager.com
+127.0.0.1	www.googletagservices.com
+127.0.0.1	www.googletagmanager.com
+127.0.0.1	googletagservices.com
 127.0.0.1	rnet.plus
 127.0.0.1	developers.google.com
 127.0.0.1	google-analytics.com
+127.0.0.1	www.google-analytics.com
 127.0.0.1	mytopf.com
 127.0.0.1	mail.ru
 127.0.0.1	mediametrics.ru
