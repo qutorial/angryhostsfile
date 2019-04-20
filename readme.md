@@ -20,7 +20,7 @@ The differences are:
 * We give you the option to block or not to block subdomains of the whitelisted domains
 * You have to put the whitelisted domains in the `whitelist` file
 
-**Currently this hosts file contains 948,671 unique entries.**
+**Currently this hosts file contains 611,427 unique entries.**
 
 ## Source of host data amalgamated here
 
