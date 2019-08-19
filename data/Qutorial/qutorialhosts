@@ -73,6 +73,56 @@
 127.0.0.1	tt.onthe.io
 127.0.0.1	static.audienceinsights.net
 127.0.0.1	api.behavioralengine.com
+127.0.0.1	criteo.com
+127.0.0.1	bat.bing.com
+127.0.0.1	go-mpulse.net
+127.0.0.1	exactag.com
+127.0.0.1	connect.facebook.net
+127.0.0.1	criteo.net
+127.0.0.1	sociomantic.com
+127.0.0.1	doubleclick.net
+127.0.0.1	adition.com
+127.0.0.1	econda-monitor.de
+127.0.0.1	www.econda-monitor.de
+127.0.0.1	www.facebook.com
+127.0.0.1	www.google-analytics.com
+127.0.0.1	www.googleadservices.com
+127.0.0.1	akstat.io
+127.0.0.1	yieldlab.net
+127.0.0.1	ad.yieldlab.net
+127.0.0.1	ibillboard.com
+127.0.0.1	emxdgt.com
+127.0.0.1	3lift.com
+127.0.0.1	eu-sonar.sociomantic.com
+127.0.0.1	eb2.3lift.com
+127.0.0.1	ib.adnxs.com
+127.0.0.1	adnxs.com
+127.0.0.1	360yield.com
+127.0.0.1	adscale.de
+127.0.0.1	pubmatic.com
+127.0.0.1	sharethrough.com
+127.0.0.1	match.sharethrough.com
+127.0.0.1	advertising.com
+127.0.0.1	rubiconproject.com
+127.0.0.1	casalemedia.com
+127.0.0.1	nscontext.eu
+127.0.0.1	gumgum.com
+127.0.0.1	rtb.gumgum.com
+127.0.0.1	stats.g.doubleclick.net
+127.0.0.1	1rx.io
+127.0.0.1	sync.1rx.io
+127.0.0.1	sync.ligadx.io
+127.0.0.1	ligadx.io
+127.0.0.1	taboola.com
+127.0.0.1	trc.taboola.com
+127.0.0.1	openx.net
+127.0.0.1	us-u.openx.net
+127.0.0.1	econda-monitor.de
+127.0.0.1	www.googletagmanager.com
+
+# Support chats, bloatware
+127.0.0.1	novomind.com
+
 
 # Redirected from previously blocked
 127.0.0.1	likes.guru
