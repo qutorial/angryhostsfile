@@ -1,28 +1,5 @@
 #Angry Hosts File - blocking unwanted hosts
 
-## Ubuntu 18.04 notice
-
-Attention: installing dnsmasq is not enough now for it to become the 
-default DNS server. It has to be enabled by a listen address command in
-its configuration:
-
-```
-#in /etc/dnsmasq.conf
-listen-address=127.0.0.1
-```
-
-And configuring system to use dnsmasq.
-E.g. by installing resolvconf and adding a nameserver 127.0.0.1 there.
-```
-sudo apt-get install resolvconf -y
-#in /etc/resolvconf/resolv.conf.d/head 
-
-nameserver 127.0.0.1
-```
-
-
-# Intro:
-
 This tool can produce a hosts file or a dnsmasq configuration, which will 
 block many of "unwanted" hosts: trackers, ads, etc.
 
@@ -43,7 +20,7 @@ The differences are:
 * We give you the option to block or not to block subdomains of the whitelisted domains
 * You have to put the whitelisted domains in the `whitelist` file
 
-**Currently this hosts file contains 611,427 unique entries.**
+**Currently this hosts file contains 615,582 unique entries.**
 
 ## Source of host data amalgamated here
 
